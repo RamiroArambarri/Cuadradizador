@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>CUADRADIZADOR (Nombre provisional)</title>
+</head>
+
+<body>
+    <main>
+        <div class="col_l">
+            <header>
+            <img src="titulo.jpg" alt="CUADRADIZADOR (Nombre provisional)">
+            </header>
+            <div class="panel">
+
+                    <label for="input_file" id="input_file_label" class="main_btn">
+                        <div class="background_1"></div>
+                        <div class="background_2"><b>Nueva imágen</b></div>
+                    </label>
+                    <input type="file" name="input_file" id="input_file">
+                    <div id="btn_regenerate" class="main_btn">
+                        <div class="background_1"></div>
+                        <div class="background_2"><b>Volver a generar</b></div>
+                    </div>
+                    <br>
+                    <label for="input_file" id="input_file_label_2">
+                        <div class="underline"></div>
+                        <div class="background_2">Elegir un nuevo archivo</div>
+                    </label>
+                    <p id="file_rejected"><em>La imágen debe estar en formato jpeg o png.</em></p>
+
+                <div id="row_1">
+                    <div id="light_selector">
+                        <p>Fondo</p>
+                        <div>
+                            <div class="light_option active_option">
+                                <div class="underline"></div>
+                                <div class="background_2">Oscuro</div>
+                            </div>
+                            <div class="light_option">
+                                <div class="underline"></div>
+                                <div class="background_2">Claro</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="input_color">Color</label>
+                        <input type="color" name="input_color" id="input_color" value="#ff802f">
+                    </div>
+                
+                <br>
+                <br>
+                <div>
+                <label for="input_resolution">Resolución</label>
+                <input type="number" id="input_resolution" name="input_resolution" min="10" max="100" value="45">
+                </div>
+            </div>
+            <p id="resolution_rejected"><em></em>La resolución debe ser un número entre 10 y 100</em></p>
+                <br>
+                <br>
+                <div id="btn_advanced_options">
+                    <div class="underline"></div>
+                    <div class="background_2">Opciones avanzadas</div>
+                </div>
+                <br>
+                <br>
+                <div id="advanced_options">
+                    <label for="input_brightness">Brillo</label>
+                    <input type="range" name="input_brightness" id="input_brightness" min="-255" max="255" step="1"
+                        value="0">
+                    <label for="input_contrast">Contraste</label>
+                    <input type="range" name="input_contrast" id="input_contrast" min="-2" max="2" step="0.1" value="0">
+                    <br>
+                    <br>
+                    <label for="input_seed">Semilla</label>
+                    <input type="text" name="input_seed" id="input_seed" value="-1" maxlength="9"><br>
+                    <p id="seed_expl">Coloque -1 para obtener una semilla aleatoria.</p>
+                    <p id="seed_rejected"><em>La semilla debe ser un número</em></p>
+                    <p id="seed_feedback"></p>
+                </div>
+            </div>
+        </div>
+        <div id="space"></div>
+    </main>
+    <footer>
+        <p>31/05/2024 v1.3<br>
+            Esta página fue realizada por Ramiro Arambarri.<br>
+            <a href="https://www.instagram.com/ramiro_arambarri/">Instagram</a> <a href="https://github.com/RamiroArambarri">GitHub</a> <a href="https://www.linkedin.com/in/ramiro-gabriel-arambarri-878616264/">LinkedIn</a>
+        </p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
