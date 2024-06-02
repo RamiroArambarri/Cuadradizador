@@ -9,6 +9,7 @@ const inputColor = document.getElementById('input_color');
 const allowedTypes = ['image/png','image/jpeg',];
 const lightOptions = document.getElementsByClassName('light_option');
 const btnAdvancedOptions = document.getElementById('btn_advanced_options');
+const btnSave = document.getElementById('btn_save');
 
 let showOptions = false;
 let imageSource;
@@ -42,9 +43,9 @@ inputFile.addEventListener('input', e => {
 
         imageSource = URL.createObjectURL(e.target.files[0]);
         btnRegenerate.style.display = 'block';
+        btnSave.style.display = 'block';
         inputFileLabel.style.display = 'none';
         inputFileLabel2.style.visibility = 'visible';
-        console.log('listo, ahora se generará la imagen');
         generateRandomSeed();
         loadUserImage();
     }
@@ -76,6 +77,9 @@ inputContrast.addEventListener('input', () => {
 inputColor.addEventListener('input', () => {
     selectedColor = inputColor.value;
     imageCompleted = false;
+});
+btnSave.addEventListener('click', () => {
+    save('cuadradización.png')
 });
 for(let i = 0; i < lightOptions.length; i++){
     lightOptions[i].addEventListener('click', () => {selectLightOption(i); imageCompleted = false;});
@@ -121,7 +125,6 @@ function draw() {
             if(!(sample[0] == 0 && sample[1] == 0 && sample[2] == 0 &&
             sample[3] == 0)){
                 imageLoaded = true;
-                console.log(i, j);
                 break;
             }
         }
@@ -156,7 +159,6 @@ function draw() {
 
     if (squareSide != finalSize / resolution) return 0;
     if(!thereIsRandomArray) return 0;
-    console.log('hasta acá vamos bien');
     for (i = 0; i < resolution; i++) {
         for (j = 0; j < resolution; j++) {
             let col = img.get((i + randomArray[i][j][0]) * squareSide, (j + randomArray[i][j][1]) * squareSide);
@@ -174,7 +176,6 @@ function draw() {
 
     }
     imageCompleted = true;
-    console.log('Imagen completada!');
 }
 
 function generateRandomSeed() {
