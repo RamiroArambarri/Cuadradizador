@@ -171,7 +171,7 @@ function draw() {
             if (lightImage) {
                 fill(selectedColor);
             }
-            rect((i + 0.5) * squareSide, (j + 0.5) * squareSide, squareSide - squareSide * (b / 255), squareSide - squareSide * (b / 255));
+            rect((i + 0.5) * squareSide, (j + 0.5) * squareSide, squareSide - squareSide * ((b-4) / 251), squareSide - squareSide * ((b-4) / 251));
         }
 
     }
