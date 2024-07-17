@@ -230,18 +230,6 @@ input[type="range"]::-webkit-slider-thumb {
     justify-content: space-around;
 }
 
-@media (max-width: 700px) {
-    #regSave {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-
-    #regSave > * {
-        margin: 1em;
-    }
-  }
-
 main:last-child {
     display: inline;
     vertical-align: center;
@@ -260,3 +248,23 @@ a {
     color:white;
 }
 
+
+@media (max-width: 700px) {
+    #regSave {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    #regSave > * {
+        margin: 1em;
+    }
+
+    main {
+        display: block;
+    }
+
+    .col_l {
+        width: 100%;
+    }
+  }
